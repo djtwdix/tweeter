@@ -14,10 +14,19 @@
   margin-top: 20px;
   padding-bottom: 0px;
   font-size: 15px;
+  font-weight: 700;
 }
 
 .new-tweet-footer {
+  background-color: #cfdfff;
+  background-image: url("https://www.transparenttextures.com/patterns/church.png");
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
+  font-family: "Bungee", curisve;
+}
+
+.counter {
+  margin-right: 10px;
 }
