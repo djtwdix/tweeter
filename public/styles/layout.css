@@ -36,7 +36,12 @@ main {
 }
 
 button {
-  background-color:
+  background-color: #4056A1;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-family: 'Bungee', cursive;
+  font-size: 20px;
 }
 
 /*
