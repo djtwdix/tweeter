@@ -1,0 +1,23 @@
+.new-tweet {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+}
+
+.new-tweet textarea {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: inherit;
+  margin-top: 20px;
+  padding-bottom: 0px;
+  font-size: 15px;
+}
+
+.new-tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
