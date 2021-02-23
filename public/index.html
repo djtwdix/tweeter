@@ -42,6 +42,7 @@
       <h4>Write a new tweet</h4>
     </div>
   </nav>
+  <!-- header contains user photo and name -->
   <header class="header">
     <div>
       <img src="images/profile-hex.png">
@@ -57,9 +58,7 @@
       <!-- <h2>Compose Tweet</h2> -->
       <form method="POST" action="/tweets" id="tweet-form">
        <!--  <label for="tweet-text">What are you humming about?</label> -->
-       <!-- <div> -->
-         <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
-       <!-- </div> -->
+        <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
         <footer class="new-tweet-footer">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="new-tweet-text">140</output>

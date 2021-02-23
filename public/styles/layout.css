@@ -28,7 +28,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-main {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
