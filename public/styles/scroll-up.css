@@ -5,5 +5,9 @@
   position: fixed;
   font-size: 50px;
   margin-right: 25%;
-  color: red;
+  color: rgb(94, 200, 94);
+}
+
+#scroll-up-arrow {
+  display: none;
 }

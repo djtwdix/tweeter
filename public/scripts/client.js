@@ -11,6 +11,27 @@ $(document).ready(() => {
       $("#input-error").slideUp("slow");
   })
 
+  $('#scroll-up-arrow').on("click", function() {
+    console.log(document.body.scrollTop)
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  })
+
+  $(document).scroll(function(){
+   /*  ("#scroll-up-arrow").fadeIn(); */
+    var y = $(this).scrollTop();
+    if (y > 100) {
+      $('#scroll-up-arrow').fadeIn();
+    } else {
+      $('#scroll-up-arrow').fadeOut();
+    }
+  })
+
+
+
+  /* $(document).scroll(function() {
+  }); */
+
   /**
    * createTweetElement() returns HTML markup
    * based on the passed-in tweet data object
