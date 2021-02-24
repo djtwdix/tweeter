@@ -52,29 +52,32 @@ $(document).ready(() => {
     }
   }
 
- /*  renderTweets(tweetData); */
-
  /**
   * Ajax post request from new tweet form
  */
   const $submit = $('#tweet-form');
   $submit.on('submit', function (event) {
     event.preventDefault()
-    console.log('Tweet submitted, performing ajax call...');
     const content = $(this).serialize();
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: content
-    })
-      .done(data => {
-        console.log("Tweet submitted")
-        loadTweets();
+    const notSerializedContent = $(this).children("#tweet-text").val();
+    if (validateForm(notSerializedContent)) {
+      alert(validateForm(notSerializedContent))
+    } else {
+      console.log('Tweet submitted, performing ajax call...');
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: content
       })
-      .fail(err => {
-        console.log(err)
-      })
-      .always()
+        .done(data => {
+          console.log("Tweet submitted")
+          loadTweets();
+        })
+        .fail(err => {
+          console.log(err)
+        })
+        .always()
+    }
   });
   
  /**
@@ -105,7 +108,7 @@ $(document).ready(() => {
  * custom returns for seconds, minutes, hours, days, years
  */
 
-function timeSinceCreated(current, previous) {
+const timeSinceCreated = (current, previous) => {
 
   const msPerMinute = 60 * 1000;
   const msPerHour = msPerMinute * 60;
@@ -168,4 +171,18 @@ function timeSinceCreated(current, previous) {
       return  + ' year ago';
     }
   }
+}
+
+/**
+ * validateForm() takes in user input string
+ * returns true if not empty and not over 140 characters
+ * returns specific message if either requirement is not met
+ */
+const validateForm = (formInput) => {
+  if (!formInput) {
+    return "Please enter something in the tweet field";
+  } else if (formInput.length > 140) {
+    return "Character limit exceeded, please use fewer characters";
+  }
+  return false;
 }
