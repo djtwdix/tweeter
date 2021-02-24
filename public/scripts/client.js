@@ -24,7 +24,7 @@ $(document).ready(() => {
       </div>
     </header>
     <div class="tweet-text">
-      ${tweetData.content.text}
+        ${escape(tweetData.content.text)}
     </div>
     <footer>
       <div>
@@ -63,6 +63,7 @@ $(document).ready(() => {
       alert(validateForm(notSerializedContent))
     } else {
       console.log('Performing ajax call...');
+      //clear textarea
       $(this).children("#tweet-text").val("");
       $.ajax({
         url: '/tweets',
@@ -185,4 +186,10 @@ const validateForm = (formInput) => {
     return "Character limit exceeded, please use fewer characters";
   }
   return false;
+}
+
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 }
