@@ -67,7 +67,7 @@ $(document).ready(() => {
   $submit.on('submit', function (event) {
     event.preventDefault()
     const content = $(this).serialize();
-    let notSerializedContent = $(this).children("#tweet-text").val();
+    const notSerializedContent = $(this).children("#tweet-text").val();
     $("#input-error").slideUp("slow", () => {
       if (validateForm(notSerializedContent)) {
         $("#input-error").slideDown("slow").text(validateForm(notSerializedContent));
@@ -102,7 +102,7 @@ $(document).ready(() => {
       method: "GET"
     })
       .done(data => {
-        console.log(data);
+        $("#tweet").empty();
         renderTweets(data);
       })
       .fail(err => {
