@@ -5,10 +5,17 @@
  */
 
 $(document).ready(() => {
+
+  $("#tweet-reveal").on("click", function () {
+      $("#tweet-form").slideToggle("slow");
+      $("#input-error").slideUp("slow");
+  })
+
   /**
    * createTweetElement() returns HTML markup
    * based on the passed-in tweet data object
    */
+
   const createTweetElement = (tweetData) => {
     const dateCreated = new Date(tweetData.created_at);
     const dateNow = new Date(Date.now());
@@ -45,15 +52,17 @@ $(document).ready(() => {
   * calls createTweetElement on each tweet
   * appends result to tweet section of index.html
   */
+
   const renderTweets = (tweetArray) => {
     for (let tweet of tweetArray) {
       $("#tweet").prepend(createTweetElement(tweet))
     }
   }
 
- /**
-  * Ajax post request from new tweet form
- */
+  /**
+   * Ajax post request from new tweet form
+  */
+
   const $submit = $('#tweet-form');
   $submit.on('submit', function (event) {
     event.preventDefault()
@@ -80,26 +89,25 @@ $(document).ready(() => {
           })
           .always()
       }
-
     })
   });
-  
- /**
-  * Ajax get request fetches tweets from db
-  */
 
-  const loadTweets = function() {
+  /**
+   * Ajax get request fetches tweets from db
+   */
+
+  const loadTweets = function () {
     $.ajax({
       url: "/tweets",
       method: "GET"
     })
-    .done(data => {
-      console.log(data);
-      renderTweets(data);
-    })
-    .fail(err => {
-      console.log(err);
-    })
+      .done(data => {
+        console.log(data);
+        renderTweets(data);
+      })
+      .fail(err => {
+        console.log(err);
+      })
   };
 
   loadTweets();
@@ -125,63 +133,64 @@ const timeSinceCreated = (current, previous) => {
   if (elapsed < msPerMinute) {
     const secondsSince = Math.round(elapsed / 1000);
     if (secondsSince === 1) {
-      return  secondsSince + ' second ago';
+      return secondsSince + ' second ago';
     } else {
-      return  secondsSince + ' seconds ago';
+      return secondsSince + ' seconds ago';
     }
   }
 
   else if (elapsed < msPerHour) {
     const minutesSince = Math.round(elapsed / msPerMinute);
     if (minutesSince === 1) {
-      return minutesSince + ' minute ago'
+      return minutesSince + ' minute ago';
     } else {
-      return  minutesSince + ' minutes ago';
+      return minutesSince + ' minutes ago';
     }
   }
 
   else if (elapsed < msPerDay) {
     const hoursSince = Math.round(elapsed / msPerHour);
     if (hoursSince === 1) {
-      return  hoursSince + ' hour ago';
+      return hoursSince + ' hour ago';
     } else {
-      return  hoursSince + ' hours ago';
+      return hoursSince + ' hours ago';
     }
   }
 
   else if (elapsed < msPerMonth) {
     const daysSince = Math.round(elapsed / msPerDay);
     if (daysSince === 1) {
-      return daysSince + " day ago"
+      return daysSince + " day ago";
     } else {
-      return  daysSince + ' days ago';
+      return daysSince + ' days ago';
     }
   }
 
   else if (elapsed < msPerYear) {
-   const monthsSince = Math.round(elapsed / msPerMonth);
-   if (monthsSince === 1) {
-     return monthsSince + ' month ago'
-   } else {
-     return  monthsSince + ' months ago';
-   }
+    const monthsSince = Math.round(elapsed / msPerMonth);
+    if (monthsSince === 1) {
+      return monthsSince + ' month ago';
+    } else {
+      return monthsSince + ' months ago';
+    }
   }
 
   else {
     const yearsSince = Math.round(elapsed / msPerYear);
     if (yearsSince === 1) {
-      return  + ' year ago';
+      return + ' year ago';
     } else {
-      return  + ' year ago';
+      return + ' year ago';
     }
   }
 }
 
 /**
  * validateForm() takes in user input string
- * returns true if not empty and not over 140 characters
+ * returns true if not empty and under 140 characters
  * returns specific message if either requirement is not met
  */
+
 const validateForm = (formInput) => {
   if (!formInput) {
     return "Tweet is empty! please write something";
@@ -196,7 +205,8 @@ const validateForm = (formInput) => {
  * creates temporary div with user input innerHTML
  * return innerHTML
  */
-const escape =  function(userInput) {
+
+const escape = function (userInput) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(userInput));
   return div.innerHTML;

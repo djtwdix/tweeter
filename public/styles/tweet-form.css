@@ -44,3 +44,7 @@
   display: none;
   font-weight: 700;
 }
+
+#tweet-form {
+  display: none;
+}
