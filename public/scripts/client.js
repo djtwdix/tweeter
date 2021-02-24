@@ -1,33 +1,8 @@
-/*
+/** 
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-const tweetData = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac"
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants"
-    },
-    created_at: 1613994657067
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd"
-    },
-    content: {
-      text: "Je pense , donc je suis"
-    },
-    created_at: 1614081057067
-  }
-]
 
 $(document).ready(() => {
   /**
@@ -77,8 +52,11 @@ $(document).ready(() => {
     }
   }
 
-  renderTweets(tweetData);
+ /*  renderTweets(tweetData); */
 
+ /**
+  * Ajax post request from new tweet form
+ */
   const $submit = $('#tweet-form');
   $submit.on('submit', function (event) {
     event.preventDefault()
@@ -90,13 +68,30 @@ $(document).ready(() => {
       data: content
     })
       .done(data => {
-        console.log("Post complete!" , data)
+        console.log("Tweet submitted")
+        loadTweets();
       })
       .fail(err => {
         console.log(err)
       })
       .always()
   });
+  
+  const loadTweets = function() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET"
+    })
+    .done(data => {
+      console.log(data);
+      renderTweets(data);
+    })
+    .fail(err => {
+      console.log(err);
+    })
+  };
+
+  loadTweets();
 })
 
 function timeSinceCreated(current, previous) {
@@ -120,7 +115,7 @@ function timeSinceCreated(current, previous) {
 
   else if (elapsed < msPerHour) {
     const minutesSince = Math.round(elapsed / msPerMinute);
-    if (timeSince === 1) {
+    if (minutesSince === 1) {
       return minutesSince + ' minute ago'
     } else {
       return  minutesSince + ' minutes ago';
