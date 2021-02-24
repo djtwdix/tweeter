@@ -79,7 +79,7 @@ $(document).ready(() => {
 
   renderTweets(tweetData);
 
-/*   const $submit = $('#tweet-form');
+  const $submit = $('#tweet-form');
   $submit.on('submit', function (event) {
     event.preventDefault()
     console.log('Tweet submitted, performing ajax call...');
@@ -96,7 +96,7 @@ $(document).ready(() => {
         console.log(err)
       })
       .always()
-  }); */
+  });
 })
 
 function timeSinceCreated(current, previous) {
