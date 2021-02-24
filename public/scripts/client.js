@@ -6,28 +6,28 @@
 
 const tweetData = [
   {
-  user: {
-  name: "Newton",
-  avatars: "https://i.imgur.com/73hZDYK.png",
-  handle: "@SirIsaac"
-  },
-  content: {
-  text: "If I have seen further it is by standing on the shoulders of giants"
-  },
-  created_at: 1613994657067
+    user: {
+      name: "Newton",
+      avatars: "https://i.imgur.com/73hZDYK.png",
+      handle: "@SirIsaac"
+    },
+    content: {
+      text: "If I have seen further it is by standing on the shoulders of giants"
+    },
+    created_at: 1613994657067
   },
   {
-  user: {
-  name: "Descartes",
-  avatars: "https://i.imgur.com/nlhLi3I.png",
-  handle: "@rd"
-  },
-  content: {
-  text: "Je pense , donc je suis"
-  },
-  created_at: 1614081057067
+    user: {
+      name: "Descartes",
+      avatars: "https://i.imgur.com/nlhLi3I.png",
+      handle: "@rd"
+    },
+    content: {
+      text: "Je pense , donc je suis"
+    },
+    created_at: 1614081057067
   }
-  ]
+]
 
 $(document).ready(() => {
   /**
@@ -36,6 +36,8 @@ $(document).ready(() => {
    */
   const createTweetElement = (tweetData) => {
     const dateCreated = new Date(tweetData.created_at);
+    const dateNow = new Date(Date.now());
+    const timeSinceTweet = timeSinceCreated(dateNow, dateCreated);
     const dateArray = dateCreated.toGMTString().split(" ").slice(0, 4).join(" ");
     const $tweet = $(`<article>
     <header>
@@ -52,7 +54,7 @@ $(document).ready(() => {
     </div>
     <footer>
       <div>
-        ${dateArray}
+        ${timeSinceTweet}
       </div>
       <div>
         <i class="far fa-flag icon"></i>
@@ -76,16 +78,88 @@ $(document).ready(() => {
   }
 
   renderTweets(tweetData);
+
+/*   const $submit = $('#tweet-form');
+  $submit.on('submit', function (event) {
+    event.preventDefault()
+    console.log('Tweet submitted, performing ajax call...');
+    const content = $(this).serialize();
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: content
+    })
+      .done(data => {
+        console.log("Post complete!" , data)
+      })
+      .fail(err => {
+        console.log(err)
+      })
+      .always()
+  }); */
 })
 
-/* $(function () {
-  const $submit = $('#tweet-form');
-  $submit.on('submit', function () {
-    console.log('Tweet submitted, performing ajax call...');
-    $.ajax('initial-tweets.JSON', { method: 'POST' })
-      .then(function (morePostsHtml) {
-        console.log('Success: ', morePostsHtml);
-        $button.replaceWith(morePostsHtml);
-      });
-  });
-}); */
+function timeSinceCreated(current, previous) {
+
+  var msPerMinute = 60 * 1000;
+  var msPerHour = msPerMinute * 60;
+  var msPerDay = msPerHour * 24;
+  var msPerMonth = msPerDay * 30;
+  var msPerYear = msPerDay * 365;
+
+  var elapsed = current - previous;
+
+  if (elapsed < msPerMinute) {
+    const secondsSince = Math.round(elapsed / 1000);
+    if (secondsSince === 1) {
+      return  secondsSince + ' second ago';
+    } else {
+      return  secondsSince + ' seconds ago';
+    }
+  }
+
+  else if (elapsed < msPerHour) {
+    const minutesSince = Math.round(elapsed / msPerMinute);
+    if (timeSince === 1) {
+      return minutesSince + ' minute ago'
+    } else {
+      return  minutesSince + ' minutes ago';
+    }
+  }
+
+  else if (elapsed < msPerDay) {
+    const hoursSince = Math.round(elapsed / msPerHour);
+    if (hoursSince === 1) {
+      return  hoursSince + ' hour ago';
+    } else {
+      return  hoursSince + ' hours ago';
+    }
+  }
+
+  else if (elapsed < msPerMonth) {
+    const daysSince = Math.round(elapsed / msPerDay);
+    if (daysSince === 1) {
+      return daysSince + " day ago"
+    } else {
+      return  daysSince + ' days ago';
+    }
+  }
+
+  else if (elapsed < msPerYear) {
+   const monthsSince = Math.round(elapsed / msPerMonth);
+   if (monthsSince === 1) {
+     return monthsSince + ' month ago'
+   } else {
+     return  monthsSince + ' months ago';
+   }
+  }
+
+  else {
+    const yearsSince = Math.round(elapsed / msPerYear);
+    if (yearsSince === 1) {
+      return  + ' year ago';
+    } else {
+      return  + ' year ago';
+    }
+  }
+}
