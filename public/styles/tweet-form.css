@@ -19,6 +19,7 @@
   font-weight: 700;
   resize: none;
   margin-top: 50px;
+  outline: none;
 }
 
 .new-tweet-footer {
