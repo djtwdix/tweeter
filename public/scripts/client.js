@@ -99,15 +99,21 @@ $(document).ready(() => {
 
 })
 
+/**
+ * timeSinceCreated() takes in current date and date tweet was created
+ * returns string indicating time since tweet
+ * custom returns for seconds, minutes, hours, days, years
+ */
+
 function timeSinceCreated(current, previous) {
 
-  var msPerMinute = 60 * 1000;
-  var msPerHour = msPerMinute * 60;
-  var msPerDay = msPerHour * 24;
-  var msPerMonth = msPerDay * 30;
-  var msPerYear = msPerDay * 365;
+  const msPerMinute = 60 * 1000;
+  const msPerHour = msPerMinute * 60;
+  const msPerDay = msPerHour * 24;
+  const msPerMonth = msPerDay * 30;
+  const msPerYear = msPerDay * 365;
 
-  var elapsed = current - previous;
+  const elapsed = current - previous;
 
   if (elapsed < msPerMinute) {
     const secondsSince = Math.round(elapsed / 1000);
