@@ -48,7 +48,7 @@ $(document).ready(() => {
   */
   const renderTweets = (tweetArray) => {
     for (let tweet of tweetArray) {
-      $("#tweet").append(createTweetElement(tweet))
+      $("#tweet").prepend(createTweetElement(tweet))
     }
   }
 
@@ -77,6 +77,10 @@ $(document).ready(() => {
       .always()
   });
   
+ /**
+  * Ajax get request fetches tweets from db
+  */
+
   const loadTweets = function() {
     $.ajax({
       url: "/tweets",
@@ -92,6 +96,7 @@ $(document).ready(() => {
   };
 
   loadTweets();
+
 })
 
 function timeSinceCreated(current, previous) {
