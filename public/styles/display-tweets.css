@@ -2,7 +2,7 @@
   border: 3px solid black;
   width: 500px;
   margin-top: 50px;
-  padding: 10px;
+  /* padding: 10px; */
   background-color: #cfdfff;
   background-image: url("https://www.transparenttextures.com/patterns/church.png");
   margin-bottom: 30px;
@@ -17,14 +17,29 @@
   visibility: visible;
 }
 
+#tweet article:hover img {
+  filter: drop-shadow(1px 1px 1px #4056A1);
+}
+
 .handle {
   visibility: hidden;
 }
 
-#tweet header, footer {
+#tweet header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 20px;
+}
+
+#tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 #tweet img {
@@ -33,20 +48,11 @@
   margin-right: 5px;
 }
 
-#tweet article:hover img {
-  filter: drop-shadow(1px 1px 1px #4056A1);
-}
-
-#tweet footer {
-  font-size: 16px;
-}
-
 #tweet .tweet-text {
-  /* text-align: center; */
-  border-bottom: 5px solid black;
-  padding: 20px;
+  border-bottom: 3px solid black;
+  padding-bottom: 20px;
+  padding-left: 15px;
   margin: 10px;
-  margin-bottom: 20px
 }
 
 .tweet-header-left {
