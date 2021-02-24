@@ -58,11 +58,12 @@ $(document).ready(() => {
   $submit.on('submit', function (event) {
     event.preventDefault()
     const content = $(this).serialize();
-    const notSerializedContent = $(this).children("#tweet-text").val();
+    let notSerializedContent = $(this).children("#tweet-text").val();
     if (validateForm(notSerializedContent)) {
       alert(validateForm(notSerializedContent))
     } else {
-      console.log('Tweet submitted, performing ajax call...');
+      console.log('Performing ajax call...');
+      $(this).children("#tweet-text").val("");
       $.ajax({
         url: '/tweets',
         method: 'POST',
