@@ -44,3 +44,11 @@
     transform: translateY(-3px);
   }
 }
+
+#tweet-reveal {
+  cursor: pointer;
+}
+
+.light {
+  font-weight: 400;
+}
