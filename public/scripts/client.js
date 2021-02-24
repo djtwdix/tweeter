@@ -188,8 +188,13 @@ const validateForm = (formInput) => {
   return false;
 }
 
-const escape =  function(str) {
+/**
+ * escape() takes in user input string
+ * creates temporary div with user input innerHTML
+ * return innerHTML
+ */
+const escape =  function(userInput) {
   let div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
+  div.appendChild(document.createTextNode(userInput));
   return div.innerHTML;
 }
