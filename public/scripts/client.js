@@ -13,7 +13,6 @@ $(document).ready(() => {
     const dateCreated = new Date(tweetData.created_at);
     const dateNow = new Date(Date.now());
     const timeSinceTweet = timeSinceCreated(dateNow, dateCreated);
-    const dateArray = dateCreated.toGMTString().split(" ").slice(0, 4).join(" ");
     const $tweet = $(`<article>
     <header>
       <div class="tweet-header-left">
