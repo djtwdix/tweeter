@@ -30,12 +30,10 @@ const tweetData = [
   ]
 
 $(document).ready(() => {
-
   /**
    * createTweetElement() returns HTML markup
    * based on the passed-in tweet data object
    */
-
   const createTweetElement = (tweetData) => {
     const dateCreated = new Date(tweetData.created_at);
     const dateArray = dateCreated.toGMTString().split(" ").slice(0, 4).join(" ");
@@ -67,11 +65,10 @@ $(document).ready(() => {
   }
 
   /**
-  * renderTweets() loops through array of tweet data
+  * renderTweets() loops through array of tweet data objects
   * calls createTweetElement on each tweet
-  * appends result to tweet section
+  * appends result to tweet section of index.html
   */
-
   const renderTweets = (tweetArray) => {
     for (let tweet of tweetArray) {
       $("#tweet").append(createTweetElement(tweet))
@@ -81,3 +78,14 @@ $(document).ready(() => {
   renderTweets(tweetData);
 })
 
+/* $(function () {
+  const $submit = $('#tweet-form');
+  $submit.on('submit', function () {
+    console.log('Tweet submitted, performing ajax call...');
+    $.ajax('initial-tweets.JSON', { method: 'POST' })
+      .then(function (morePostsHtml) {
+        console.log('Success: ', morePostsHtml);
+        $button.replaceWith(morePostsHtml);
+      });
+  });
+}); */

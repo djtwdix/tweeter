@@ -10,12 +10,9 @@
     type="text/css" />
 
  <!-- icons -->
-
   <script src="https://kit.fontawesome.com/5e4ea1b3b4.js" crossorigin="anonymous"></script>
 
-
   <!-- Fonts -->
-
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
@@ -37,7 +34,7 @@
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
+  <!-- nav bar -->
   <nav class="navbar">
     <div class="nav-left">
       <span id="logo">tweeter</span>
@@ -57,13 +54,13 @@
       <h2>Your Name</h2>
     </div>
   </header>
-  <!-- Page-specific (main) content here -->
   <main class="container">
-    <section class="new-tweet">
+     <!-- write new tweet section -->
+    <section id="tweet-form" class="new-tweet">
       <form method="POST" action="/tweets" id="tweet-form">
         <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
         <footer class="new-tweet-footer">
-          <button type="submit">Tweet</button>
+          <button id="tweet-submit" type="submit">Tweet</button>
           <output name="counter" class="counter" for="new-tweet-text">140</output>
         </footer>
       </form>

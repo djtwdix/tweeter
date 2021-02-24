@@ -4,7 +4,8 @@
   align-items: center;
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: #4056a1;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
   color: #FFFFFF;
   padding: 1.5em;
   position: fixed;
@@ -23,7 +24,7 @@
   bottom: -12px;
 }
 
-h4 {
+.navbarh4 {
   margin: 0;
   margin-bottom: 5px;
 }
