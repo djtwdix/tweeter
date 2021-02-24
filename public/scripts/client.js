@@ -59,26 +59,29 @@ $(document).ready(() => {
     event.preventDefault()
     const content = $(this).serialize();
     let notSerializedContent = $(this).children("#tweet-text").val();
-    if (validateForm(notSerializedContent)) {
-      alert(validateForm(notSerializedContent))
-    } else {
-      console.log('Performing ajax call...');
-      //clear textarea
-      $(this).children("#tweet-text").val("");
-      $.ajax({
-        url: '/tweets',
-        method: 'POST',
-        data: content
-      })
-        .done(data => {
-          console.log("Tweet submitted")
-          loadTweets();
+    $("#input-error").slideUp("slow", () => {
+      if (validateForm(notSerializedContent)) {
+        $("#input-error").slideDown("slow").text(validateForm(notSerializedContent));
+      } else {
+        console.log('Performing ajax call...');
+        //clear textarea
+        $(this).children("#tweet-text").val("");
+        $.ajax({
+          url: '/tweets',
+          method: 'POST',
+          data: content
         })
-        .fail(err => {
-          console.log(err)
-        })
-        .always()
-    }
+          .done(data => {
+            console.log("Tweet submitted")
+            loadTweets();
+          })
+          .fail(err => {
+            console.log(err)
+          })
+          .always()
+      }
+
+    })
   });
   
  /**
@@ -181,9 +184,9 @@ const timeSinceCreated = (current, previous) => {
  */
 const validateForm = (formInput) => {
   if (!formInput) {
-    return "Please enter something in the tweet field";
+    return "Tweet is empty! please write something";
   } else if (formInput.length > 140) {
-    return "Character limit exceeded, please use fewer characters";
+    return "Character limit exceeded! Please write less";
   }
   return false;
 }

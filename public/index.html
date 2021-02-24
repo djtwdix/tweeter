@@ -41,7 +41,7 @@
     </div>
     <div class="nav-right">
       <h4>write a new tweet</h4>
-      <i class="fas fa-angle-double-down"></i>
+      <i class="fas fa-angle-double-down bounce"></i>
     </div>
   </nav>
   <!-- header contains user photo and name -->
@@ -58,6 +58,7 @@
      <!-- write new tweet section -->
     <section class="new-tweet">
       <form id="tweet-form">
+        <div id="input-error"></div>
         <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
         <footer class="new-tweet-footer">
           <button id="tweet-submit" type="submit">Tweet</button>
