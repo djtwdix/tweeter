@@ -6,6 +6,9 @@
  */
 
 $(document).ready(() => {
+
+  //count characters in tweet form and display remaining characters
+
   $("#tweet-text").on("input", function charCounter() {
     characters = $(this).val().length;
     charactersLeft = 140 - characters
@@ -17,8 +20,12 @@ $(document).ready(() => {
       $(parent).find(".counter").css({ "color": "#545149" });
     }
   })
+
+  //toggle tweet form on click of write new tweet
+
   $("#tweet-reveal").on("click", function () {
     $("#tweet-form").slideToggle("slow");
+    $("#tweet-text").focus();
     $("#input-error").slideUp("slow");
   })
 
@@ -38,6 +45,7 @@ $(document).ready(() => {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     $("#tweet-form").slideDown("slow");
+    $("#tweet-text").focus();
   })
 })
 

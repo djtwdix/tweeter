@@ -101,7 +101,7 @@ $(document).ready(() => {
         renderTweets(data);
       })
       .fail(err => {
-        console.log(err);
+        console.log(err.message);
       })
   };
 
