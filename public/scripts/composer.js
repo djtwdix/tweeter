@@ -19,7 +19,7 @@ $(document).ready(() => {
     } else {
       $(parent).find(".counter").css({ "color": "#545149" });
     }
-  })
+  });
 
   //toggle tweet form on click of write new tweet
 
@@ -27,7 +27,7 @@ $(document).ready(() => {
     $("#tweet-form").slideToggle("slow");
     $("#tweet-text").focus();
     $("#input-error").slideUp("slow");
-  })
+  });
 
   $(document).scroll(function () {
     var y = $(this).scrollTop();
@@ -38,7 +38,7 @@ $(document).ready(() => {
       $('#scroll-up-arrow').fadeOut();
       $(".nav-right").fadeIn();
     }
-  })
+  });;
 
   $('#scroll-up-arrow').on("click", function () {
     $("#tweet-text").focus();
@@ -46,12 +46,9 @@ $(document).ready(() => {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     $("#tweet-form").slideDown("slow");
     $("#input-error").slideUp("slow");
-  })
+  });
 
-  $("#flag").on("click", function(){
-    $("#flag").css({"color": "red"})
-  })
-})
+});
 
 
 

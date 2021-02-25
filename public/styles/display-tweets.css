@@ -1,8 +1,7 @@
 #tweet article {
   border: 3px solid black;
-  width: 500px;
+  width: 40vw;
   margin-top: 50px;
-  /* padding: 10px; */
   background-color: #cfdfff;
   background-image: url("https://www.transparenttextures.com/patterns/church.png");
   margin-bottom: 30px;

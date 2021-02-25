@@ -33,7 +33,7 @@ $(document).ready(() => {
         ${timeSinceTweet}
       </div>
       <div class="icons">
-        <i class="far fa-flag icon flag"></i>
+        <i class="far fa-flag"></i>
         <i class="fas fa-retweet retweet"></i>
         <i class="far fa-heart heart"></i>
       </div>
@@ -83,7 +83,7 @@ $(document).ready(() => {
             loadTweets();
           })
           .fail(err => {
-            console.log(err)
+            console.log(err.message)
           })
           .always()
       }
