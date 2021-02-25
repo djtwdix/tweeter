@@ -6,29 +6,6 @@
 
 $(document).ready(() => {
 
-  $("#tweet-reveal").on("click", function () {
-      $("#tweet-form").slideToggle("slow");
-      $("#input-error").slideUp("slow");
-  })
-
-  $(document).scroll(function(){
-    var y = $(this).scrollTop();
-    if (y > 100) {
-      $('#scroll-up-arrow').fadeIn();
-      $(".nav-right").fadeOut();
-    } else {
-      $('#scroll-up-arrow').fadeOut();
-      $(".nav-right").fadeIn();
-    }
-  })
-
-  $('#scroll-up-arrow').on("click", function() {
-    console.log(document.body.scrollTop)
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    $("#tweet-form").slideDown("slow");
-  })
-
   /**
    * createTweetElement() returns HTML markup
    * based on the passed-in tweet data object
