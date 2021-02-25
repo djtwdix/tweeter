@@ -21,6 +21,7 @@
 
   #tweet > article, form {
     width: 40vw;
+    margin-bottom: 40px;
   }
 
   #tweet > article {
