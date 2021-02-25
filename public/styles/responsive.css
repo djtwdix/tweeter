@@ -30,12 +30,14 @@
   #main-desktop {
     width: 50vw;
     margin: 0;
+   
   }
 
   #header-desktop {
     height: 600px;
     width: 50vw;
     margin-top: 0;
+    border-radius: 5px;
   }
 
   .new-tweet > #input-error {
