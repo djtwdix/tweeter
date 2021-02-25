@@ -26,10 +26,8 @@ $(document).ready(() => {
     console.log(document.body.scrollTop)
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    $("#tweet-form").slideToggle("slow");
+    $("#tweet-form").slideDown("slow");
   })
-
-  $(".flag").css({"color": "red"})
 
   /**
    * createTweetElement() returns HTML markup
