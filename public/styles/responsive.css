@@ -7,6 +7,26 @@
   .header {
     font-size: 16px;
   }
+
+  .header img {
+    height: 100px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+
+  #scroll-up {
+    top: 0;
+    bottom: 800px;
+    margin-top: 37px;
+    font-size: 20px;
+    color: white;
+  }
+
+  .scroll-label {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 1050px) {
@@ -48,15 +68,4 @@
     width: 40vw;
   }
 
-}
-@media only screen and (max-width: 800px) {
-
-  #scroll-up {
-    top: 0;
-    bottom: 800px;
-    margin-right: 25px;
-    margin-top: 15px;
-    font-size: 30px;
-    color: white;
-  }
 }

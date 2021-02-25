@@ -66,8 +66,8 @@ $(document).ready(() => {
     $("#input-error").slideUp("slow", () => {
       if (validateForm(notSerializedContent)) {
         $("#input-error").slideDown("slow")
-        $("#quote").text(validateForm(notSerializedContent)[0]).css({"color": "#d5e5ff"});
-        $("#quote-name").text(validateForm(notSerializedContent)[1]).css({"color": "#d5e5ff"});
+        $("#quote").text(validateForm(notSerializedContent)[0]);
+        $("#quote-name").text(validateForm(notSerializedContent)[1]);
         $("#error-message").text(validateForm(notSerializedContent)[2]);
       } else {
         console.log('Performing ajax call...');

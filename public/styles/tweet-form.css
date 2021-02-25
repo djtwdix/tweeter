@@ -65,6 +65,10 @@
   outline: none;
 }
 
+#tweet-submit:active {
+  background-color:  #30427d;
+}
+
 #tweet-form {
   display: none;
 }
