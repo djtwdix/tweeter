@@ -14,19 +14,21 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
 
   #scroll-up {
     top: 0;
     bottom: 800px;
-    margin-top: 37px;
-    font-size: 20px;
+    margin-top: 25px;
+    font-size: 30px;
     color: white;
   }
-
   .scroll-label {
     display: none;
   }
+}
+
+@media only screen and (max width: 400) {
 }
 
 @media only screen and (min-width: 1050px) {
