@@ -30,14 +30,7 @@ $(document).ready(() => {
   });
 
   $(document).scroll(function () {
-    var y = $(this).scrollTop();
-    if (y > 100) {
-      $('#scroll-up-arrow').fadeIn();
-      $(".nav-right").fadeOut();
-    } else {
-      $('#scroll-up-arrow').fadeOut();
-      $(".nav-right").fadeIn();
-    }
+    showArrowOnScroll();
   });;
 
   $('#scroll-up-arrow').on("click", function () {
@@ -48,7 +41,21 @@ $(document).ready(() => {
     $("#input-error").slideUp("slow");
   });
 
+  
 });
 
 
+const showArrowOnScroll = () => {
+  var y = $(this).scrollTop();
+  if (y > 100) {
+    $('#scroll-up-arrow').fadeIn();
+    $(".nav-right").fadeOut();
+  } else {
+    $('#scroll-up-arrow').fadeOut();
+    $(".nav-right").fadeIn();
+  }
+}
 
+const characterCount = () => {
+
+}
