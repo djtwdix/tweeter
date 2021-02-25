@@ -6,10 +6,19 @@
   font-size: 50px;
   margin-right: 20%;
   color: rgb(94, 200, 94);
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   bottom: 0;
 }
 
 #scroll-up-arrow {
   display: none;
+}
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-label {
+  font-size: 16px;
 }
