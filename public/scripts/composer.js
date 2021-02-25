@@ -4,7 +4,7 @@
  */
 
 const showArrowOnScroll = () => {
-  var y = $(this).scrollTop();
+  let y = $(this).scrollTop();
   if (y > 100) {
     $('#scroll-up-arrow').fadeIn();
     $(".nav-right").fadeOut();

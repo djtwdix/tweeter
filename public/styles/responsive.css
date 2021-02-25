@@ -23,6 +23,10 @@
     width: 40vw;
   }
 
+  #tweet > article {
+    margin-top: 0;
+  }
+
   #main-desktop {
     width: 50vw;
     margin: 0;
