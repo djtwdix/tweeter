@@ -26,6 +26,8 @@ $(document).ready(() => {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   })
 
+  $(".flag").css({"color": "red"})
+
   /**
    * createTweetElement() returns HTML markup
    * based on the passed-in tweet data object

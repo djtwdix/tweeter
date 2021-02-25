@@ -45,6 +45,7 @@ button {
   font-family: 'Bungee', cursive;
   font-size: 20px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 /*
