@@ -65,7 +65,10 @@ $(document).ready(() => {
     const notSerializedContent = $(this).children("#tweet-text").val();
     $("#input-error").slideUp("slow", () => {
       if (validateForm(notSerializedContent)) {
-        $("#input-error").slideDown("slow").text(validateForm(notSerializedContent));
+        $("#input-error").slideDown("slow")
+        $("#quote").text(validateForm(notSerializedContent)[0]);
+        $("#quote-name").text(validateForm(notSerializedContent)[1]).css({"color": "black"});
+        $("#error-message").text(validateForm(notSerializedContent)[2]);
       } else {
         console.log('Performing ajax call...');
         //clear textarea
@@ -188,9 +191,9 @@ const timeSinceCreated = (current, previous) => {
 
 const validateForm = (formInput) => {
   if (!formInput) {
-    return "Either write something worth reading or do something worth writing - Benjamin Franklin";
+    return ["Either write something worth reading or do something worth writing", "Benjamin Franklin", "Tweet cannot be empty"];
   } else if (formInput.length > 140) {
-    return "Brevity is the soul of wit - William Shakespeare";
+    return ["Brevity is the soul of wit", "William Shakespeare", "Character limit exceeded"];
   }
   return false;
 }

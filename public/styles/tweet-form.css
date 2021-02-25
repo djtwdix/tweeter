@@ -35,13 +35,16 @@
 }
 
 #input-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: rgb(255, 57, 57);
   border-radius: 5px;
   color: white;
   text-align: center;
   margin-top: 15px;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 10px;
   display: none;
   font-weight: 700;
   font-size: 16px;
@@ -52,3 +55,12 @@
   display: none;
 }
 
+#error-message {
+  margin: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+#quote {
+  margin-bottom: 10px;
+}
