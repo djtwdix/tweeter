@@ -19,6 +19,7 @@
   resize: none;
   margin-top: 50px;
   outline: none;
+  color: #545149;
 }
 
 .new-tweet-footer {
@@ -43,6 +44,8 @@
   padding: 20px;
   display: none;
   font-weight: 700;
+  font-size: 20px;
+  width: 500px;
 }
 
 #tweet-form {

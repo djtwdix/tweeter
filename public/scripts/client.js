@@ -11,14 +11,7 @@ $(document).ready(() => {
       $("#input-error").slideUp("slow");
   })
 
-  $('#scroll-up-arrow').on("click", function() {
-    console.log(document.body.scrollTop)
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  })
-
   $(document).scroll(function(){
-   /*  ("#scroll-up-arrow").fadeIn(); */
     var y = $(this).scrollTop();
     if (y > 100) {
       $('#scroll-up-arrow').fadeIn();
@@ -27,10 +20,11 @@ $(document).ready(() => {
     }
   })
 
-
-
-  /* $(document).scroll(function() {
-  }); */
+  $('#scroll-up-arrow').on("click", function() {
+    console.log(document.body.scrollTop)
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  })
 
   /**
    * createTweetElement() returns HTML markup
@@ -59,9 +53,9 @@ $(document).ready(() => {
         ${timeSinceTweet}
       </div>
       <div>
-        <i class="far fa-flag icon"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
+        <i class="far fa-flag icon flag"></i>
+        <i class="fas fa-retweet retweet"></i>
+        <i class="far fa-heart heart"></i>
       </div>
     </footer>
     </article>`);
@@ -214,9 +208,9 @@ const timeSinceCreated = (current, previous) => {
 
 const validateForm = (formInput) => {
   if (!formInput) {
-    return "Tweet is empty! please write something";
+    return "Either write something worth reading or do something worth writing - Benjamin Franklin";
   } else if (formInput.length > 140) {
-    return "Character limit exceeded! Please write less";
+    return "Brevity is the soul of wit - William Shakespeare";
   }
   return false;
 }

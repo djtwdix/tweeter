@@ -12,7 +12,7 @@ $(document).ready(() => {
     const parent = $(this).parent();
     $(parent).find(".counter").text(charactersLeft);
     if (charactersLeft < 0) {
-      $(parent).find(".counter").css({ "color": "red" });
+      $(parent).find(".counter").css({ "color": "rgb(255, 57, 57)" });
     } else {
       $(parent).find(".counter").css({ "color": "#545149" });
     }
