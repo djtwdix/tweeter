@@ -58,12 +58,12 @@
   <main class="container">
      <!-- write new tweet section -->
     <section class="new-tweet">
+      <div id="input-error">
+        <div id="error-message"></div>
+        <div id="quote"></div>
+        <div id="quote-name"></div>
+      </div>
       <form id="tweet-form">
-        <div id="input-error">
-          <div id="error-message"></div>
-          <div id="quote"></div>
-          <div id="quote-name"></div>
-        </div>
         <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
         <footer class="new-tweet-footer">
           <button id="tweet-submit" type="submit">Tweet</button>
