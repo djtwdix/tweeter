@@ -1,13 +1,15 @@
 .new-tweet {
   display: flex;
   justify-content: center;
-  width: 40vw;
+  width: 75vw;
 }
 
 .new-tweet textarea {
   display: flex;
   align-items: center;
-  width: 40vw;
+  width: 75vw;
+  max-width: 500px;
+  margin-top: 50px;
   border: none;
   border-bottom: 2px solid black;
   background-color: inherit;
