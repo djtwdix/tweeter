@@ -41,11 +41,15 @@ $(document).ready(() => {
   })
 
   $('#scroll-up-arrow').on("click", function () {
-    console.log(document.body.scrollTop)
+    $("#tweet-text").focus();
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     $("#tweet-form").slideDown("slow");
-    $("#tweet-text").focus();
+    $("#input-error").slideUp("slow");
+  })
+
+  $("#flag").on("click", function(){
+    $("#flag").css({"color": "red"})
   })
 })
 

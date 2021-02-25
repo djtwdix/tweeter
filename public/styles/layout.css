@@ -37,17 +37,6 @@ body {
   
 }
 
-button {
-  z-index: 0;
-  background-color: #4056A1;
-  color: white;
-  border: none;
-  padding: 10px;
-  font-family: 'Bungee', cursive;
-  font-size: 20px;
-  border-radius: 3px;
-  cursor: pointer;
-}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

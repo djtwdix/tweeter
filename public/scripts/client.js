@@ -32,7 +32,7 @@ $(document).ready(() => {
       <div>
         ${timeSinceTweet}
       </div>
-      <div>
+      <div class="icons">
         <i class="far fa-flag icon flag"></i>
         <i class="fas fa-retweet retweet"></i>
         <i class="far fa-heart heart"></i>

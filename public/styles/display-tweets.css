@@ -13,16 +13,21 @@
   text-shadow: 0.3px 0.3px #4056A1;
 }
 
-#tweet article:hover .handle {
+/* #tweet article:hover .handle {
   visibility: visible;
-}
+} */
 
 #tweet article:hover img {
   filter: drop-shadow(0.2px 0.2px 0.2px #4056A1);
 }
 
+#tweet article:hover i {
+  visibility: visible;
+}
+
 .handle {
-  visibility: hidden;
+  color: #4056A1;
+  font-size: 16px;
 }
 
 #tweet header {
@@ -60,3 +65,6 @@
   align-items: center;
 }
 
+.icons {
+  visibility: hidden;
+}

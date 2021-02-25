@@ -17,7 +17,6 @@
   font-size: 20px;
   font-weight: 700;
   resize: none;
-  /* margin-top: 50px; */
   outline: none;
   color: #545149;
 }
@@ -51,6 +50,18 @@
   width: 500px;
 }
 
+#tweet-submit {
+  z-index: 0;
+  background-color: #4056A1;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-family: 'Bungee', cursive;
+  font-size: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 #tweet-form {
   display: none;
 }
@@ -64,3 +75,4 @@
 #quote {
   margin-bottom: 10px;
 }
+
