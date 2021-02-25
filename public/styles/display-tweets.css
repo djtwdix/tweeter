@@ -1,21 +1,17 @@
 #tweet article {
   border: 3px solid black;
   width: 75vw;
-  /* max-width: 500px; */
   margin-top: 50px;
   background-color: #cfdfff;
   background-image: url("https://www.transparenttextures.com/patterns/church.png");
   margin-bottom: 30px;
+  min-width: 200px;
 }
 
 #tweet article:hover {
   box-shadow: 1.5px 1.5px #4056A1;
   text-shadow: 0.3px 0.3px #4056A1;
 }
-
-/* #tweet article:hover .handle {
-  visibility: visible;
-} */
 
 #tweet article:hover img {
   filter: drop-shadow(0.2px 0.2px 0.2px #4056A1);

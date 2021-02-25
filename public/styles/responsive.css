@@ -1,0 +1,60 @@
+@media only screen and (max-width: 450px) {
+  
+  .navbar {
+    flex-direction: column;
+  }
+
+  .header img {
+    width: 150px;
+    height: auto;
+  }
+
+  .header {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+
+  .header-main-container {
+    margin-top: 150px;
+    display: flex;
+    padding: 50px;
+    width: 100vw;
+  }
+
+  #tweet > article, form {
+    width: 40vw;
+  }
+
+  #main-desktop {
+    width: 50vw;
+    margin: 0;
+  }
+
+  #header-desktop {
+    height: 600px;
+    width: 50vw;
+    margin-top: 0;
+  }
+
+  .new-tweet > #input-error {
+    width: 40vw;
+  }
+
+  #tweet-text {
+    width: 40vw;
+  }
+
+}
+@media only screen and (max-width: 800px) {
+
+  #scroll-up {
+    top: 0;
+    bottom: 800px;
+    margin-right: 25px;
+    margin-top: 32px;
+    font-size: 30px;
+    color: white;
+  }
+}

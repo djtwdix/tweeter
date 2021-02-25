@@ -26,6 +26,7 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/church.png");
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  min-width: 260px;
 }
 
 .container {
@@ -34,7 +35,6 @@ body {
   align-items: center;
   width: 90%;
   margin: auto;
-  
 }
 
 
@@ -42,8 +42,3 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-/* @media only screen and (min-width: 666px) {
-  #tweet article {
-    max-width: 500px;
-  }
-} */

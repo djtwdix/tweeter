@@ -4,7 +4,6 @@
   justify-content: flex-end;
   position: fixed;
   font-size: 50px;
-  margin-right: 5%;
   color:  #4056a1;
   margin-bottom: 30px;
   bottom: 0;
@@ -14,22 +13,16 @@
 #scroll-up-arrow {
   display: none;
 }
+
 .scroll-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  margin-right: 7px;
 }
 
 .scroll-label {
   font-size: 16px;
 }
 
-@media only screen and (max-width: 800px) {
-  #scroll-up {
-    top: 0;
-    margin-top: 40px;
-    font-size: 30px;
-    color: white;
-  }
-}

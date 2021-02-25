@@ -4,6 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -25,6 +26,7 @@
   <link rel="stylesheet" href="styles/tweet-form.css">
   <link rel="stylesheet" href="styles/display-tweets.css">
   <link rel="stylesheet" href="styles/scroll-up.css">
+  <link rel="stylesheet" href="styles/responsive.css">
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -46,46 +48,48 @@
     </div>
   </nav>
   <!-- header contains user photo and name -->
-  <header class="header">
-    <div>
-      <img src="images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Daniel James</h2>
-    </div>
-  </header>
-  <main class="container">
-     <!-- write new tweet section -->
-    <section class="new-tweet">
-      <div id="input-error">
-        <div id="error-message"></div>
-        <div id="quote"></div>
-        <div id="quote-name"></div>
+  <div class="header-main-container">
+    <header class="header" id="header-desktop">
+      <div>
+        <img src="images/profile-hex.png">
       </div>
-      <form id="tweet-form">
-        <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
-        <footer class="new-tweet-footer">
-          <button id="tweet-submit" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="new-tweet-text">140</output>
-        </footer>
-      </form>
-    </section>
-    <!-- display tweet section -->
-    <section id="tweet">
-    </section>
-    <div id="scroll-up">
-      <div id="scroll-up-arrow">
-        <div class="scroll-container bounce">
-          <div>
-            <i class="fas fa-arrow-circle-up"></i>
-          </div>
-          <div class="scroll-label">
-            scroll to top
-          </div>
+      <br>
+      <div>
+        <h2>Daniel James</h2>
+      </div>
+    </header>
+    <main class="container" id="main-desktop">
+       <!-- write new tweet section -->
+      <section class="new-tweet">
+        <div id="input-error">
+          <div id="error-message"></div>
+          <div id="quote"></div>
+          <div id="quote-name"></div>
         </div>
-      </div>
+        <form id="tweet-form">
+          <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
+          <footer class="new-tweet-footer">
+            <button id="tweet-submit" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="new-tweet-text">140</output>
+          </footer>
+        </form>
+      </section>
+      <!-- display tweet section -->
+      <section id="tweet">
+      </section>
     </div>
   </main>
+</div>
+<div id="scroll-up">
+  <div id="scroll-up-arrow">
+    <div class="scroll-container bounce">
+      <div>
+        <i class="fas fa-arrow-circle-up"></i>
+      </div>
+      <div class="scroll-label">
+        scroll to top
+      </div>
+    </div>
+  </div>
 </body>
 </html>
