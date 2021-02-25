@@ -42,3 +42,8 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+/* @media only screen and (min-width: 666px) {
+  #tweet article {
+    max-width: 500px;
+  }
+} */
