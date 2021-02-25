@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 120px;
+  height: 80px;
   width: 100%;
   background-color: #4056a1;
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
@@ -35,6 +35,19 @@
   animation: bounce 2s infinite;
 }
 
+
+#tweet-reveal {
+  cursor: pointer;
+}
+
+.light {
+  font-weight: 400;
+}
+
+#new-tweet-arrow {
+  font-size: 16px;
+}
+
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -45,12 +58,4 @@
   60% {
     transform: translateY(-3px);
   }
-}
-
-#tweet-reveal {
-  cursor: pointer;
-}
-
-.light {
-  font-weight: 400;
 }
