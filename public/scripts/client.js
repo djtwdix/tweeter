@@ -15,8 +15,13 @@ $(document).ready(() => {
     const dateCreated = new Date(tweetData.created_at);
     const dateNow = new Date(Date.now());
     const timeSinceTweet = timeSinceCreated(dateNow, dateCreated);
-    const $tweet = $(`<article>
-    <header>
+
+    const handleClick = (event) => {
+      $(event.target).toggleClass("clicked");
+    }
+
+    const $tweet = $(`<article>`)
+    const $header = $(`<header>
       <div class="tweet-header-left">
         <img src=${tweetData.user.avatars}>
         ${tweetData.user.name}
@@ -24,21 +29,34 @@ $(document).ready(() => {
       <div class="handle tweet-header-left">
         ${tweetData.user.handle}
       </div>
-    </header>
-    <div class="tweet-text">
-        ${escape(tweetData.content.text)}
-    </div>
-    <footer>
+    </header>`)
+    const $text = $(`<div class="tweet-text">
+          ${escape(tweetData.content.text)}
+      </div>`)
+    const $footer = $(`<footer>
       <div>
         ${timeSinceTweet}
       </div>
-      <div class="icons">
-        <i class="far fa-flag"></i>
-        <i class="fas fa-retweet retweet"></i>
-        <i class="far fa-heart heart"></i>
-      </div>
-    </footer>
-    </article>`);
+    </footer>`)
+    const $icons = $(`<div>`).addClass("icons")
+    const $flag = $(`<i class="far fa-flag flag"></i>`)
+    const $retweet = $(`<i class="fas fa-retweet retweet retweet"></i>`)
+    const $heart = $(`<i class="far fa-heart heart heart"></i>`)
+
+    $flag.click(handleClick);
+    $retweet.click(handleClick);
+    $heart.click(handleClick);
+
+    $icons.append($flag)
+    $icons.append($retweet)
+    $icons.append($heart)
+
+    $footer.append($icons)
+
+    $tweet.append($header)
+    $tweet.append($text)
+    $tweet.append($footer)
+
     return $tweet;
   }
 

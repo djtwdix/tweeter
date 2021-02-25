@@ -69,3 +69,11 @@
   visibility: hidden;
 }
 
+.icons i {
+  margin: 2px;
+  cursor: pointer;
+}
+
+.icons i.clicked {
+  color: red;
+}
