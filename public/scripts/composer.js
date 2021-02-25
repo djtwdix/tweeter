@@ -9,16 +9,8 @@ $(document).ready(() => {
 
   //count characters in tweet form and display remaining characters
 
-  $("#tweet-text").on("input", function charCounter() {
-    characters = $(this).val().length;
-    charactersLeft = 140 - characters
-    const parent = $(this).parent();
-    $(parent).find(".counter").text(charactersLeft);
-    if (charactersLeft < 0) {
-      $(parent).find(".counter").css({ "color": "rgb(255, 57, 57)" });
-    } else {
-      $(parent).find(".counter").css({ "color": "#545149" });
-    }
+  $("#tweet-text").on("input", function () {
+    characterCount()
   });
 
   //toggle tweet form on click of write new tweet
@@ -57,5 +49,13 @@ const showArrowOnScroll = () => {
 }
 
 const characterCount = () => {
-
+  characters = $(this).val().length;
+  charactersLeft = 140 - characters
+  const parent = $(this).parent();
+  $(parent).find(".counter").text(charactersLeft);
+  if (charactersLeft < 0) {
+    $(parent).find(".counter").css({ "color": "rgb(255, 57, 57)" });
+  } else {
+    $(parent).find(".counter").css({ "color": "#545149" });
+  }
 }
