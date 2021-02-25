@@ -191,9 +191,9 @@ const timeSinceCreated = (current, previous) => {
 
 const validateForm = (formInput) => {
   if (!formInput) {
-    return ["Either write something worth reading or do something worth writing", "Benjamin Franklin", "Tweet cannot be empty"];
+    return ['"Either write something worth reading or do something worth writing"', "Benjamin Franklin", "Tweet cannot be empty"];
   } else if (formInput.length > 140) {
-    return ["Brevity is the soul of wit", "William Shakespeare", "Character limit exceeded"];
+    return ['"Brevity is the soul of wit"', "William Shakespeare", "Character limit exceeded"];
   }
   return false;
 }
