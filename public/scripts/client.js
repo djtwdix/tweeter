@@ -15,8 +15,10 @@ $(document).ready(() => {
     var y = $(this).scrollTop();
     if (y > 100) {
       $('#scroll-up-arrow').fadeIn();
+      $(".nav-right").fadeOut();
     } else {
       $('#scroll-up-arrow').fadeOut();
+      $(".nav-right").fadeIn();
     }
   })
 
