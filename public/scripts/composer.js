@@ -11,7 +11,7 @@ const showArrowOnScroll = () => {
   } else {
     $('#scroll-up-arrow').fadeOut();
     $(".nav-right").fadeIn();
-  }
+  } 
 }
 
 /**
@@ -42,14 +42,14 @@ const tweetToggle = () => {
 $(document).ready(() => {
 
   /**
- * listens on input and registers length
+ * listens and registers user input value length
  * displays remaining characters on page
  * turns red if limit exceeded
  */
 
   $("#tweet-text").on("input", function () {
     characters = $(this).val().length;
-    charactersLeft = 140 - characters
+    charactersLeft = 140 - characters;
     const parent = $(this).parent();
     $(parent).find(".counter").text(charactersLeft);
     if (charactersLeft < 0) {
@@ -72,6 +72,5 @@ $(document).ready(() => {
     scrollUp();
   });
 
-  
 });
 

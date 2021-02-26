@@ -43,6 +43,7 @@ $(document).ready(() => {
     const $retweet = $(`<i class="fas fa-retweet retweet retweet"></i>`)
     const $heart = $(`<i class="far fa-heart heart heart"></i>`)
 
+    //toggles icon color to red and back on click
     $flag.click(handleClick);
     $retweet.click(handleClick);
     $heart.click(handleClick);
@@ -63,7 +64,7 @@ $(document).ready(() => {
   /**
   * renderTweets() loops through array of tweet data objects
   * calls createTweetElement on each tweet
-  * appends result to tweet section of index.html
+  * prepends result to tweet section of index.html
   */
 
   const renderTweets = (tweetArray) => {
@@ -91,6 +92,7 @@ $(document).ready(() => {
         console.log('Performing ajax call...');
         //clear textarea
         $(this).children("#tweet-text").val("");
+        $(".counter").text(140)
         $.ajax({
           url: '/tweets',
           method: 'POST',
@@ -99,6 +101,7 @@ $(document).ready(() => {
           .done(data => {
             console.log("Tweet submitted")
             loadTweets();
+
           })
           .fail(err => {
             console.log(err.message)
@@ -110,6 +113,7 @@ $(document).ready(() => {
 
   /**
    * Ajax get request fetches tweets from db
+   * renders them to page with renderTweets()
    */
 
   const loadTweets = function () {
@@ -203,7 +207,7 @@ const timeSinceCreated = (current, previous) => {
 
 /**
  * validateForm() takes in user input string
- * returns true if not empty and under 140 characters
+ * returns false if not empty and under 140 characters
  * returns specific message if either requirement is not met
  */
 
@@ -218,7 +222,7 @@ const validateForm = (formInput) => {
 
 /**
  * escape() takes in user input string
- * creates temporary div with user input innerHTML
+ * creates temporary div containing user input
  * return innerHTML
  */
 
