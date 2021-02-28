@@ -48,8 +48,8 @@ $(document).ready(() => {
  */
 
   $("#tweet-text").on("input", function () {
-    characters = $(this).val().length;
-    charactersLeft = 140 - characters;
+    let characters = $(this).val().length;
+    let charactersLeft = 140 - characters;
     const parent = $(this).parent();
     $(parent).find(".counter").text(charactersLeft);
     if (charactersLeft < 0) {
